@@ -27,14 +27,21 @@
 
         </div>
 
-        <img src="public/image/triangles/top-triangles.png" alt="" class="triangles">
+        <div class="top-triangles">
+            <img src="public/image/triangles/top-triangle-1.png" alt="" class="triangle-1">
+            <img src="public/image/triangles/top-triangle-2.png" alt="" class="triangle-2">
+            <img src="public/image/triangles/top-triangle-3.png" alt="" class="triangle-3">
+            <img src="public/image/triangles/top-triangle-4.png" alt="" class="triangle-4">
+        </div>
 
     </section>
 
     <div class="container">
         <section class="about">
 
-            <img src="public/image/triangles/triangles.png" alt="" class="floating-triangles">
+            <div class="tiny-triangles">
+                <img src="public/image/triangles/tiny-triangle-front.png" alt="" class="front">
+            </div>
 
             <div class="title">Sobre Mim</div>
 
@@ -56,57 +63,118 @@
 
         <section class="technologies">
 
-            <div class="left">
+            <div class="title">Tecnologias</div>
 
-                <div class="arrow-previous"></div>
+            <ul class="list">
 
-                <ul class="list">
-                    <li class="item">
-                        <img src="public/image/icons/html.png" alt="" class="icon">
-                    </li>
-                    <li class="item">
-                        <img src="public/image/icons/css.png" alt="" class="icon">
-                    </li>
-                    <li class="item">
-                        <img src="public/image/icons/js.png" alt="" class="icon">
-                    </li>
-                    <li class="item">
-                        <img src="public/image/icons/jquery.png" alt="" class="icon">
-                    </li>
-                    <li class="item">
-                        <img src="public/image/icons/html.png" alt="" class="icon">
-                    </li>
-                    <li class="item">
-                        <img src="public/image/icons/css.png" alt="" class="icon">
-                    </li>
-                    <li class="item">
-                        <img src="public/image/icons/js.png" alt="" class="icon">
-                    </li>
-                    <li class="item">
-                        <img src="public/image/icons/jquery.png" alt="" class="icon">
-                    </li>
-                </ul>
+                <li class="arrow previous"></li>
 
-                <div class="arrow-next"></div>
+                <div class="scroll-track">
 
-            </div>
+                    <li class="item">
+                        <img src="public/image/icons/html.png" alt="" class="source">
+                        <div class="text">
+                            HTML5
+                        </div>
+                    </li>
 
-            <div class="right">
+                    <li class="item">
+                        <img src="public/image/icons/css.png" alt="" class="source">
+                        <div class="text">
+                            CSS3
+                        </div>
+                    </li>
 
-                <div class="title">Tecnologias</div>
+                    <li class="item">
+                        <img src="public/image/icons/js.png" alt="" class="source">
+                        <div class="text">
+                            JavaScript
+                        </div>
+                    </li>
 
-                <div class="icon-container">
-                    <img src="public/image/icons/html.png" alt="" class="icon">
+                    <li class="item">
+                        <img src="public/image/icons/jquery.png" alt="" class="source">
+                        <div class="text">
+                            JQuery
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <img src="public/image/icons/vue.png" alt="" class="source">
+                        <div class="text">
+                            VueJS
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <img src="public/image/icons/react.png" alt="" class="source">
+                        <div class="text">
+                            React / React Native
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <img src="public/image/icons/php.png" alt="" class="source">
+                        <div class="text">
+                            PHP
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <img src="public/image/icons/wordpress.png" alt="" class="source">
+                        <div class="text">
+                            WordPress
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <img src="public/image/icons/bootstrap.png" alt="" class="source">
+                        <div class="text">
+                            Bootstrap
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <img src="public/image/icons/laravel.svg" alt="" class="source">
+                        <div class="text">
+                            Laravel
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <img src="public/image/icons/photoshop.png" alt="" class="source">
+                        <div class="text">
+                            Photoshop
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <img src="public/image/icons/figma.png" alt="" class="source">
+                        <div class="text">
+                            Figma
+                        </div>
+                    </li>
+
+
+                    <li class="item">
+                        <img src="public/image/icons/cs.png" alt="" class="source">
+                        <div class="text">
+                            C#
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <img src="public/image/icons/unity.png" alt="" class="source">
+                        <div class="text">
+                            Unity
+                        </div>
+                    </li>
+
                 </div>
 
-                <div class="desc">
-                    Linguagem de marcação utilizada na web
-                </div>
+                <li class="arrow next"></li>
 
-                <img src="public/image/triangles/triangles.png" alt="" class="floating-triangles">
-
-                <img src="public/image/triangles/card-triangles-2.png" alt="" class="card-triangles">
-            </div>
+            </ul>
 
         </section>
 
@@ -116,7 +184,7 @@
 
                 <div class="title">Entre em contato</div>
 
-                <form action="" class="requires-validation" novalidate>
+                <form action="" class="needs-validation" novalidate>
 
                     <label class="desc-input">
                         Nome:
@@ -139,7 +207,7 @@
                     <label class="desc-input">
                         Mensagem:
                         <textarea name="mensagem" class="input" required></textarea>
-                        <div class="invalid-feedback">Preencha com seu nome.</div>
+                        <div class="invalid-feedback">Preencha com sua mensagem.</div>
                     </label>
 
                     <button type="submit" class="submit">Enviar</button>
@@ -154,22 +222,22 @@
                     <li class="item">
                         <img src="public/image/icons/git.png" alt="" class="icon">
                         /ismaelsousa18
-                        <a href="www.github.com/ismaelrsousa18" target="_blank" class="link"></a>
+                        <a href="http://www.github.com/ismaelrsousa18" target="_blank" class="link"></a>
                     </li>
                     <li class="item">
                         <img src="public/image/icons/linkedin.png" alt="" class="icon">
                         Ismael Sousa
-                        <a href="www.github.com/ismaelrsousa18" target="_blank" class="link"></a>
+                        <a href="http://www.github.com/ismaelrsousa18" target="_blank" class="link"></a>
                     </li>
                     <li class="item">
                         <img src="public/image/icons/phone.png" alt="" class="icon">
                         (13) 98100-7944
-                        <a href="www.github.com/ismaelrsousa18" target="_blank" class="link"></a>
+                        <a href="tel:+5513981007944" class="link"></a>
                     </li>
                     <li class="item">
                         <img src="public/image/icons/email.png" alt="" class="icon">
                         ismaelrsousa18@gmail.com
-                        <a href="www.github.com/ismaelrsousa18" target="_blank" class="link"></a>
+                        <a href="mailto:ismaelrsousa18@gmail.com" class="link"></a>
                     </li>
                 </ul>
 

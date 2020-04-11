@@ -12,14 +12,56 @@ section.principal{
 
         > .text{
             text-align: center;
+            animation: name-show .5s 1.5s ease-out forwards, name-box-shadow .5s 3s ease-in-out forwards;
+            opacity: 0;
+            position: relative;
+            padding: .5rem 1rem;
+            padding-top: 0rem;
 
             > .name{
                 font-weight: 700;
                 font-size: 40px;
+                margin-bottom: -10px;
+
+                &:after{
+                    content: '';
+                    position: absolute;
+                    width: 12px;
+                    height: 26px;
+                    bottom: -24px;
+                    left: -3px;
+                    background-color: #eee;
+                    transform: rotate(-35deg);
+                }
+
+                &:before{
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 24px;
+                    top: -8px;
+                    right: -14px;
+                    background-color: #eee;
+                    transform: rotate(-35deg);
+                }
             }
 
-            > .ocupation{
-                margin-top: -10px;
+            &:after{
+                content: '';
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                border: 5px solid transparent;
+                animation: name-border-1 .5s 2s linear forwards;
+            }
+
+            &:before{
+                content: '';
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+                border: 5px solid transparent;
+                animation: name-border-2 .5s 2.5s linear forwards;
             }
         }
         
@@ -37,13 +79,6 @@ section.principal{
                 max-width: 100%;
             }
         }
-    }
-
-    > .triangles{
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 70%;
     }
 }
 
@@ -84,125 +119,120 @@ section.about{
 
 section.technologies{
     margin-top: 1rem;
+    width: 100%;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    position: relative;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-    > .left{
-        width: 200px;
-        flex: 0 0 200px;
-        background-color: #fff;
-        margin-right: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        position: relative;
-        padding: 1rem .5rem;
+    > .title{
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    > .list{
         display: flex;
-        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        position: relative;
         align-items: center;
+        max-width: calc((100px + 4rem) * 5);
 
-        > .list{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-height: 450px;
-            overflow: hidden;
-            scroll-behavior: smooth;
+        > .arrow{
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            position: absolute;
+            cursor: pointer;
 
-            .item{
-                height: 80px;
-                width: 80px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
-
-                &:not(:last-child){
-                    margin-bottom: 40px;
-                }
-
-                > .icon{
-                    max-width: 100%;
-                    max-height: 100%;
-                }
+            &.previous{
+                left: -30px;
+                border-right-color: #aaa;
 
                 &:hover{
+                    border-right-color: #333;
+                }
+            }
+    
+            &.next{
+                right: -30px;
+                border-left-color: #aaa;                
+
+                &:hover{
+                    border-left-color: #333;
+                }
+            }
+
+            &.hide{
+                display: none;
+            }
+        }
+
+        > .scroll-track{
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            align-items: center;
+            scroll-behavior: smooth;
+            user-select: none;
+
+            > .item{
+                width: 100px;
+                height: 160px;
+                flex: 0 0 100px;
+                margin: 0 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: .2s;
+                opacity: .3;
+                position: relative;
+
+                > .text{
+                    position: absolute;
+                    bottom: -20%;
+                    opacity: 0;
+                    transition: .2s;
+                    font-size: 12px;
+                    font-weight: 700;
+                    white-space: nowrap;
+                    text-align: center;
+                }
+    
+                > .source{
+                    max-width: 100px;
+                    max-height: 90px;
+                    filter: grayscale(1);
+                }
+
+                &.active{ 
+                    opacity: 1;
+                    cursor: default;
+
+                    > .text{
+                        bottom: 10px;
+                        opacity: 1;
+                    }
+
+                    > .source{
+                        filter: grayscale(0);
+                    }
+                }
+
+                &:not(.active):hover{
                     opacity: .7;
                 }
             }
         }
-
-        .arrow-previous{
-            width: 0px;
-            height: 0px;
-            border: 10px solid transparent;
-            border-bottom: 15px solid #aaa;
-            cursor: pointer;
-            margin-bottom: 4rem;
-            
-            &:hover{
-                border-bottom-color: #333;
-            }
-        }
-
-        .arrow-next{
-            width: 0px;
-            height: 0px;
-            border: 10px solid transparent;
-            border-top: 15px solid #aaa;
-            cursor: pointer;
-            margin-top: 4rem;
-            
-            &:hover{
-                border-top-color: #333;
-            }
-        }
     }
 
-    > .right{
-        flex: 1;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        position: relative;
-        padding: 2rem;
-        padding-bottom: 4rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        > .title{
-            font-size: 30px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-
-        > .icon-container{
-            width: 150px;
-            height: 150px;
-            overflow: hidden;
-            margin-bottom: 1rem;
-
-            > .icon{
-                max-width: 100%;
-                max-height: 100%;
-            }
-        }
-
-        > .card-triangles{
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 150px;
-        }
-
-        > .floating-triangles{
-            width: 100px;
-            position: absolute;
-            right: -150px;
-            bottom: 30px;
-            animation: triangles 30s linear infinite;
-        }
-    }
 }
 
 section.contact{
@@ -262,6 +292,7 @@ section.contact{
             font-weight: 700;
             text-transform: uppercase;
             position: relative;
+            outline: none;
 
             &:hover{
                 background-color: #333;
@@ -382,6 +413,60 @@ footer.footer{
             &:hover{
                 opacity: .7;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 992px){
+    section.principal{
+        height: unset;
+
+        > .top-triangles{
+            display: none;
+        }
+
+        > .content{
+            padding: 1rem 0;
+            justify-content: center;
+
+            > .text{
+                animation: name-show .5s ease-out forwards, name-box-shadow .5s 1.5s ease-in-out forwards;
+
+                &:after{
+                    animation: name-border-1 .5s .5s linear forwards;
+                }
+
+                &:before{
+                    animation: name-border-2 .5s 1s linear forwards;
+                }
+            }
+        }
+    }
+
+    section.about{
+        margin: 0;
+    }
+
+    section.contact{
+        flex-direction: column;
+
+        > .left{
+            width: 100%;
+        }
+
+        > .right{
+            width: 100%;
+        }
+    }
+    footer.footer{
+        margin: 0;
+
+        > .content{
+            justify-content: center;
+        }
+
+        > .triangle{
+            display: none;
         }
     }
 }

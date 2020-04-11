@@ -1,0 +1,22 @@
+.top-triangles{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+
+    > img{
+        position: absolute;
+        right: 0;
+        top: 0;
+        animation: top-triangles .5s forwards;
+        transform-origin: 100% 0;
+        opacity: 0;
+
+        &.triangle-1{z-index: 4;animation-delay: 0s;}
+        &.triangle-2{z-index: 3;animation-delay: .3s;}
+        &.triangle-3{z-index: 2;animation-delay: .7s;}
+        &.triangle-4{z-index: 1;animation-delay: 1s;}
+    }
+}
