@@ -28,8 +28,8 @@ function sendMail(data) {
     $.ajax({
         url: '/mail.php',
         dataType: 'json',
-        data: data,
-        method: 'POST',
+        data: { data: data },
+        method: 'get',
         success: function (data) {
             console.log("SUCCESS")
         },
